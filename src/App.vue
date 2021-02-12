@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Blogs/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+// import AddBlog from './components/AddBlog.vue'
+import Blogs from './components/Blogs.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Blogs
   }
 }
 </script>
@@ -25,4 +24,9 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+
+
+
+
 </style>
