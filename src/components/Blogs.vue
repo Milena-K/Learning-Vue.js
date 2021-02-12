@@ -2,7 +2,7 @@
 <div id="show-blogs">
     <input type="text" v-model="search" placeholder="search box">
   <div v-for="blog in filteredBlogs" :key="blog.Id" class="single-blog">
-      <h3> {{ blog.title }} </h3>
+      <h3> {{ blog.title | to-uppercase }} </h3>
       <p> {{ blog.body }} </p>
   </div>
 </div>
@@ -29,6 +29,11 @@ export default {
             return this.blogs.filter((blog) => {
                 return blog.title.match(this.search);
             })
+        }
+    },
+    filters: {
+        toUppercase(value) {
+            return value.toUpperCase();
         }
     }
 }
