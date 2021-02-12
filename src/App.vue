@@ -1,16 +1,14 @@
 <template>
   <div id="app">
-    <Blogs/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-// import AddBlog from './components/AddBlog.vue'
-import Blogs from './components/Blogs.vue'
+
 export default {
   name: 'App',
   components: {
-    Blogs
   }
 }
 </script>

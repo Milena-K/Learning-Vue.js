@@ -3,13 +3,13 @@
     <input type="text" v-model="search" placeholder="search box">
   <div v-for="blog in filteredBlogs" :key="blog.Id" class="single-blog">
       <h3> {{ blog.title | to-uppercase }} </h3>
-      <p> {{ blog.body }} </p>
+      <p> {{ blog.body | snippet }} </p>
   </div>
 </div>
 </template>
 
 <script>
-import SearchMixin from '../mixins/SearchMixin'
+import SearchMixin from '../mixins/SearchMixin';
 
 export default {
     data() {
@@ -26,6 +26,9 @@ export default {
     filters: {
         toUppercase(value) {
             return value.toUpperCase();
+        },
+        snippet(value) { 
+            return value.slice(0,100) + '...'
         }
     },
     mixins: [
@@ -41,12 +44,14 @@ export default {
 }
 
 #show-blogs input {
-    width: 800px;
+    border-radius: 20px;
+    width: 770px;
     text-align: center;
     font-size: 20px;
 }
 
 .single-blog{
+    border-radius: 20px;
     padding: 20px;
     margin: 20px 0;
     box-sizing: border-box;
