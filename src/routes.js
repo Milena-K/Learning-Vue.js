@@ -6,5 +6,6 @@ export default new VueRouter({
     routes: [
         {path: '/', component: Blogs},
         {path: '/add', component: AddBlog}
-    ]
+    ],
+    mode: 'history'
 })
