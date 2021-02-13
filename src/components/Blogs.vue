@@ -2,7 +2,7 @@
 <div id="show-blogs">
     <input type="text" v-model="search" placeholder="search box">
   <div v-for="blog in filteredBlogs" :key="blog.Id" class="single-blog">
-      <h3> {{ blog.title | to-uppercase }} </h3>
+      <router-link v-bind:to="'/blog/' + blog.id"><h3> {{ blog.title | to-uppercase }} </h3></router-link>
       <p> {{ blog.body | snippet }} </p>
   </div>
 </div>
@@ -53,9 +53,14 @@ export default {
 .single-blog{
     border-radius: 20px;
     padding: 20px;
-    margin: 20px 0;
+    margin: 20px auto;
     box-sizing: border-box;
     background: #eee;
+    width: 800px;
+}
+
+h3 {
+    color: #2c3e50;
 }
 
 </style>
