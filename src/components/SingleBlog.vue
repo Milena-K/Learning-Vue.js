@@ -1,7 +1,7 @@
 <template>
   <div class="single-blog">
       <h1>{{ blog.title }}</h1>
-      <article>{{ blog.body }}</article>
+      <article>{{ blog.content }}</article>
   </div>
 </template>
 
@@ -14,7 +14,7 @@ export default {
         }
     },
     created() {
-        fetch("http://jsonplaceholder.typicode.com/posts/" + this.id )
+        fetch("https://blogs-5bed4-default-rtdb.firebaseio.com/posts/" + this.id + ".json")
             .then( response => response.json() )
             .then( data => this.blog = data)
     }

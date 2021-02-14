@@ -3,7 +3,7 @@
     <input type="text" v-model="search" placeholder="search box">
   <div v-for="blog in filteredBlogs" :key="blog.Id" class="single-blog">
       <router-link v-bind:to="'/blog/' + blog.id"><h3> {{ blog.title | to-uppercase }} </h3></router-link>
-      <p> {{ blog.body | snippet }} </p>
+      <p> {{ blog.content | snippet }} </p>
   </div>
 </div>
 </template>
@@ -19,9 +19,14 @@ export default {
         }
     },
     created() {
-        fetch("http://jsonplaceholder.typicode.com/posts")
+        fetch("https://blogs-5bed4-default-rtdb.firebaseio.com/posts.json/")
             .then(response => response.json())
-            .then(data => this.blogs = data.slice(0,10))
+            .then(data => {
+                for(const key in data) {
+                    data[key].id = key;
+                    this.blogs.push(data[key]);
+                }
+            })
     },
     filters: {
         toUppercase(value) {
@@ -44,8 +49,8 @@ export default {
 }
 
 #show-blogs input {
-    border-radius: 20px;
-    width: 770px;
+    border-radius: 2px;
+    width: 780px;
     text-align: center;
     font-size: 20px;
 }
