@@ -1,4 +1,4 @@
-# Playing with Blogs
+# Blogs
 
 ## Project setup
 ```
