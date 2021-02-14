@@ -1,41 +1,33 @@
 <template>
-  <nav>
-      <ul>
-          <li><router-link to="/" exact>Blogs</router-link></li>
-          <li><router-link to="/add" exact>New Blog</router-link></li>
-      </ul>
-  </nav>
+
+<div class="center">
+    <vs-navbar color="#5428AB" text-white center-collapsed v-model="active" shadow shadowScroll>
+        <vs-navbar-item to="/" exact :active="active == 'Blogs'" id="Blogs">
+            Blogs
+        </vs-navbar-item>
+        <vs-navbar-item to="/add" exact :active="active == 'New Blog'" id="New Blog">
+           New Blog
+        </vs-navbar-item>
+    </vs-navbar>
+</div>
 </template>
 
 <script>
 export default {
-
+    data() {
+        return {
+            active: 'Blogs'
+        }
+    }
 }
 </script>
 
-<style>
-ul{
-    list-style-type: none;
-    text-align: center;
-    margin: 0;
-}
-li{
-    display: inline-block;
-    margin: 0 10px;
-}
-a{
-    color: #fff;
+<style scoped>
+a:-webkit-any-link {
     text-decoration: none;
-    padding: 6px 8px;
-    border-radius: 10px;
 }
-nav{
-    background: #444;
-    padding: 14px 0;
-    margin-bottom: 40px;
-}
-.router-link-active{
-    background: #eee;
-    color: #444;
+button {
+    margin: 10px;
+    font-size: 25px;
 }
 </style>
