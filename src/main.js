@@ -11,8 +11,9 @@ Vue.use(VueResource)
 Vue.use(VueRouter)
 Vue.use(Vuesax, {
   colors: {
-    primary:'#5b3cc4',
+    primary:'#01949A',
     success:'rgb(23, 201, 100)',
+      warn: '#DB1F48',
      danger:'rgb(242, 19, 93)',
     warning:'rgb(255, 130, 0)',
        dark:'rgb(36, 33, 69)'

@@ -1,7 +1,8 @@
 <template>
+<div>
 <div id="add-blog">
   <form v-if="!submitted">
-    <h1>Add a New Blog Post</h1>
+    <h1>What's on your mind?</h1>
     <label for="blog-title" >Blog Title:</label>      
     <input type="text" name="blog-title" v-model.lazy="blog.title" required>
     <label for="blog-content">Blog Content:</label>
@@ -29,20 +30,22 @@
     <div v-if="submitted">
         <h1>Ey, thanks for posting!</h1>
     </div>
-    <!-- Sakam poseben element da napravam za ova, ama podocna -->
-    <div id="preview">
-       <h3>Privew Blog</h3> 
-       <p><span>Blog Title:</span> {{ blog.title }} </p>
-       <p><span>Blog Content:</span> </p>
-       <p style="white-space: ">{{ blog.content }}</p>
-       <p><span>Blog Categories: </span></p>
-       <ul>
-           <li v-for="category in blog.categories" :key="category">{{ category }}</li>
-       </ul>
-       <p><span> Author: </span></p>
-       <p>{{ blog.author }} </p>
-    </div>
   </div>
+
+    <div class="single-blog">
+        <div class="blog-start">
+            Preview:
+            <h1>{{ blog.title }}</h1>
+            <article class="blog-content">{{ blog.content }}</article>
+        </div>
+        <div class="blog-end">
+            <p><strong>Author: {{ blog.author }}</strong></p>
+            <strong>Categories:</strong>
+            <li v-for="(category, index) in blog.categories" :key="index">{{ category }}</li>
+        </div>
+    </div>
+
+</div>
 </template>
 
 <script>
@@ -82,6 +85,7 @@ button {
     box-sizing: border-box;
 }
 #add-blog {
+    color: white;
     margin: 20px auto;
     max-width: 500px;
 }

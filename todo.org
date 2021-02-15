@@ -1,0 +1,15 @@
+#+TITLE: Todo
+
+* Inbox
+** TODO
+- [ ] Blogs: Create Custom Cards
+- [ ] Blogs: Create Custom Search
+- [ ] SingleBlog: Add Back Button
+
+- [-] AddBlog: Change Everything
+  - [ ] Blog Title
+  - [ ] Blog Content
+  - [ ] Blog Categories
+  - [ ] Author
+  - [ ] Button Add Blog
+  - [X] Privew Blog

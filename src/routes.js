@@ -1,7 +1,7 @@
 import Blogs from './components/Blogs'
 import AddBlog from './components/AddBlog'
-import VueRouter from 'vue-router'
 import SingleBlog from './components/SingleBlog'
+import VueRouter from 'vue-router'
 
 export default new VueRouter({
     routes: [
