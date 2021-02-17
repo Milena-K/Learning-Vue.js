@@ -1,26 +1,26 @@
 <template>
 <div class="grid">
-    <vs-row class="mh" align="center" justify="space-around" direction="column">
 
-        <vs-input
-            warn
-            v-model="search"
-            placeholder="Search" />
+    <vs-input
+        warn
+        v-model="search"
+        style="margin: 40px 0 40px 75px;"
+        placeholder="Search" />
+
+    <vs-row class="mh" align="center" justify="space-around" direction="row">
 
         <vs-col
             v-for="blog in filteredBlogs"
             :key="blog.id"
             style="margin: 20px;"
-            w="2"
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom">
+            w="2">
 
             <router-link
                 :to="'/blog/' + blog.id"
                 style="text-decoration: none; color: inherit;">
                 <vs-card color="primary" type="3">
                     <template #title>
-                    <h3>{{ blog.title }}</h3>
+                    <h3>{{ blog.title | snippet }}</h3>
                     </template>
                     <template #img>
                     <img src="../assets/strawberry.png" alt="">
@@ -33,6 +33,7 @@
 
         </vs-col>
     </vs-row>
+
 </div>
 </template>
 
@@ -60,8 +61,10 @@ export default {
         toUppercase(value) {
             return value.toUpperCase();
         },
-        snippet(value) { 
-            return value.slice(0,50) + '...'
+        snippet(value) {
+            if ( value.length >= 50 )
+                return value.slice(0,50) + '...'
+            return value;
         }
     },
     mixins: [
@@ -72,4 +75,15 @@ export default {
 </script>
 
 <style>
+#banner {
+    display: flex;
+    position: relative;
+    flex-basis: content;
+}
+
+#banner img {
+    width: 100%;
+    border-radius: 20px;
+}
+
 </style>

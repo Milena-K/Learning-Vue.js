@@ -33,11 +33,16 @@ export default {
   margin: 190px;
   background-color: white;
   border-radius: 20px;
-  color: #0C2D48;
   width: 50%;
-  margin: 200px auto;
+  height: auto;
+  color: #0C2D48;
+  margin: 80px auto;
   text-align: left;
   padding: 80px;
+}
+.single-blog h1 {
+    text-align: center;
+    margin-bottom: 80px;
 }
 
 .blog-end {

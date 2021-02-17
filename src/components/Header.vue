@@ -1,7 +1,7 @@
 <template>
 
 <div class="center">
-    <vs-navbar color="#DB1F48" text-white center-collapsed v-model="active" >
+    <vs-navbar color="#E5DDC8" center-collapsed square v-model="active" >
         <vs-navbar-item to="/" exact :active="active == 'Blogs'" id="Blogs">
             Blogs
         </vs-navbar-item>

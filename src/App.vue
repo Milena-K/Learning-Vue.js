@@ -1,7 +1,10 @@
 <template>
   <div id="app">
-    <app-header></app-header>
-    <router-view></router-view>
+    <div id="banner">
+      <img src="./assets/banner-slim.jpg" alt="" />
+    </div>
+    <app-header/>
+    <router-view/>
   </div>
 </template>
 
@@ -22,9 +25,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #5428AB;
-  margin-top: 130px;
+  width: 100%;
+  height: 100%;
 }
 body {
   background: #004369;
+  margin: 0;
 }
 </style>
